@@ -8,8 +8,8 @@ const Container = styled(Card)`
   user-select: none;
   transition: all 0.2s;
   &:hover {
-    box-shadow: 1px 1px 10px #6fff9a, -1px -1px 10px #6fff9a,
-      -1px 1px 10px #6fff9a, 1px -1px 10px #6fff9a;
+    box-shadow: -2px -2px 10px -5px #06f84f, 2px 2px 10px -5px #06f84f,
+      2px -2px 10px -5px #06f84f, -2px 2px 10px -5px #06f84f;
   }
 `;
 
