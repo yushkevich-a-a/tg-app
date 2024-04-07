@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
+import { Header } from "./components/Header";
+import { Body } from "./components/Body";
 
 export const App = () => {
   return (
-    <div>
-        <button>получить список задач</button>
-        work
-    </div>
-  )
-}
-
+    <ThemeProvider>
+      <div>
+        <Header />
+        <Body />
+      </div>
+    </ThemeProvider>
+  );
+};
