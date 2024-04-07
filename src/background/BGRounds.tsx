@@ -27,32 +27,31 @@ const initPosition = [
 export const BGRounds = () => {
 	const [posArr, setPosArray] = useState(initPosition);
 
-	let timerId: unknown = null;
-
-
-	// useEffect(() => {
-	// 	const timerFunc = () => {
-	// 		setPosArray((state) => {
-	// 			return Math.round(Math.random() * 5) > 7
-	// 				? initPosition
-	// 				: state.map((item) => ({
-	// 						...item,
-	// 						x: Math.round(
-	// 							Math.random() * (Math.random() * 10 > 5 ? 300 : -50)
-	// 						),
-	// 						y: Math.round(
-	// 							Math.random() * (Math.random() * 10 > 5 ? 800 : -50)
-	// 						),
-	// 						timer: Math.round(Math.random() * 5),
-	// 				  }));
-	// 		});
-	// 		timerId = setTimeout(timerFunc, 10 * 1000);
-	// 	};
-	// 	timerId = setTimeout(timerFunc, 10 * 1000);
-	// 	return () => {
-	// 		!!timerId && clearTimeout(timerId as number);
-	// 	};
-	// }, []);
+	
+	useEffect(() => {
+		let timerId: unknown = null;
+		const timerFunc = () => {
+			setPosArray((state) => {
+				return Math.round(Math.random() * 5) > 7
+					? initPosition
+					: state.map((item) => ({
+							...item,
+							x: Math.round(
+								Math.random() * (Math.random() * 10 > 5 ? 300 : -50)
+							),
+							y: Math.round(
+								Math.random() * (Math.random() * 10 > 5 ? 800 : -50)
+							),
+							timer: Math.round(Math.random() * 5),
+					  }));
+			});
+			timerId = setTimeout(timerFunc, 10 * 1000);
+		};
+		timerId = setTimeout(timerFunc, 10 * 1000);
+		return () => {
+			!!timerId && clearTimeout(timerId as number);
+		};
+	}, []);
 
 	return (
 		<>
