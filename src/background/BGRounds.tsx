@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const RoundBG = styled.div<{
@@ -27,7 +27,9 @@ const initPosition = [
 export const BGRounds = () => {
 	const [posArr, setPosArray] = useState(initPosition);
 
-	let timerId: any = 0 ;
+	let timerId: unknown = null;
+
+
 	useEffect(() => {
 		const timerFunc = () => {
 			setPosArray((state) => {
@@ -48,7 +50,7 @@ export const BGRounds = () => {
 		};
 		timerId = setTimeout(timerFunc, 10 * 1000);
 		return () => {
-			!!timerId && clearTimeout(timerId);
+			!!timerId && clearTimeout(timerId as number);
 		};
 	}, []);
 
