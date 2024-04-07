@@ -13,7 +13,6 @@ const Content = styled.div`
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(22, 26, 29, 0.4);
 `;
 
 export const BGWrapper = ({ children }: { children: ReactNode }) => {
