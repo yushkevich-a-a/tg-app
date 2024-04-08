@@ -1,4 +1,6 @@
-export const lists = [
+import { TList, TItem, TUser, TUserList } from "../types";
+
+export const lists: TList[] = [
   {
     id: "1",
     title: "список желаний на день рождения",
@@ -15,7 +17,7 @@ export const lists = [
   },
 ];
 
-export const items = [
+export const items: TItem[] = [
   {
     id: "1",
     list_id: "1",
@@ -67,7 +69,7 @@ export const items = [
   },
 ];
 
-export const users = [
+export const users: TUser[] = [
   {
     id: "44",
     name: "Антон",
@@ -80,7 +82,7 @@ export const users = [
   },
 ];
 
-export const userList = [
+export const userList: TUserList[] = [
   {
     user_id: "44",
     list_id: "1",
