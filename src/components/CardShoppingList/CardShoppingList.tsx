@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import styled from "styled-components";
+import { TList } from "../../types";
 
 const Container = styled(Card)`
   width: "18rem";
@@ -18,7 +19,7 @@ const Actions = styled.div`
   gap: 10px;
 `;
 // TODO: добавить общие типы для списка и для предмета списка
-export const BayList = ({ list }: { list: any }) => {
+export const CardShoppingList = ({ list }: { list: TList }) => {
   const HandleClick = () => {
     console.log("редирект на список задач");
   };
@@ -30,8 +31,8 @@ export const BayList = ({ list }: { list: any }) => {
       }
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
-        <Card.Title>название списка</Card.Title>
-        <Card.Text>описание списка</Card.Text>
+        <Card.Title>{list.title}</Card.Title>
+        <Card.Text>{list.description || "нет описания"}</Card.Text>
         {
           // кнопки управления поделиться списком, удалить список, редактировать мета списка,
         }
