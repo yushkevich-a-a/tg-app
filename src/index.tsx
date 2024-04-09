@@ -9,6 +9,10 @@ import {
   loader as shoppingListLoader,
   ShoppingList,
 } from "./routes/shopping-list";
+import {
+  loader as purchaseListLoader,
+  PurchaseList,
+} from "./routes/purchase-list";
 
 const router = createBrowserRouter([
   {
@@ -23,20 +27,21 @@ const router = createBrowserRouter([
     id: "root",
     children: [
       {
+        path: "list/:listId",
+        element: <PurchaseList />,
+        loader: purchaseListLoader,
+        // handle: {
+        //   crumb: (path: string, name: string) => (
+        //     <Link to={path}>contact-{name}</Link>
+        //   ),
+        // },
+      },
+      {
         index: true,
         loader: shoppingListLoader,
         //   action: contactAction,
         element: <ShoppingList />,
       },
-      // {
-      //   path: "list/:listId",
-      //   element: <Contact />,
-      //   handle: {
-      //     crumb: (path: string, name: string) => (
-      //       <Link to={path}>contact-{name}</Link>
-      //     ),
-      //   },
-      // },
     ],
   },
 ]);
